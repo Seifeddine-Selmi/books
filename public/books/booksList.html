@@ -1,0 +1,46 @@
+<br><hr>
+
+<div class="container" >
+	<h2>Books List</h2>
+	<form name="searchForm">
+	<div class="row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<input class="form-control" ng-model="search.$" placeholder="Search a book">
+		</div>
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<input class="form-control" ng-model="search.title" placeholder="By title">
+		</div>
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<input class="form-control" ng-model="search.description" placeholder="By description">
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<select class="form-control" ng-model="search.level" ng-options="level for level in levels">
+			</select>
+		</div>
+	</div>
+
+	</form>
+
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Level</th>
+				<th>id</th>
+			</tr>
+		</thead>
+
+		<tbody ng-repeat="book in books | filter:search:strict"" ng-click="selectBook(book)">
+			<tr>
+				<td>{{book.title}}</td>
+				<td>{{book.description}}</td>
+				<!-- <td>{{book.level | uppercase}}</td> -->
+				<td>{{book.level | stars}}</td>
+				<td>{{book._id}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

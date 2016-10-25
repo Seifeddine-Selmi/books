@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Books</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body ng-app="booksApp"  style="padding: 10px">
+ <div class="container-fluid">
+
+     <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Books</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="#/news">News</a></li>
+          <li><a href="#/favoritebooks">Favorite Books</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+    <div ng-view></div>
+
+	<div  ng-controller="MainCtrl">
+
+		<div class="">
+		
+			<div class="">
+				<div  ng-include="'books/bookForm.html'" onload="whenFormIsLoaded()"></div>
+			</div>
+		</div>
+
+		<div class="">
+			<div class="">
+				<div class="" ng-include="'books/booksList.html'" onload="whenListIsLoaded()"></div>
+			</div>
+		</div>
+
+	</div><!-- End MainCtrl -->
+
+	
+
+   
+ 	
+ </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/factories/Models.js"></script>
+    <script src="js/factories/Book.js"></script>
+    <script src="js/controllers/AdditionCtrl.js"></script>
+    <script src="js/controllers/NewsCtrl.js"></script>
+    <script src="js/controllers/FavoriteBooksCtrl.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+
+</body>
+</html>

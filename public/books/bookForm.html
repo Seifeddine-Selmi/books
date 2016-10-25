@@ -1,0 +1,36 @@
+
+
+       <div class="container">
+        <h2>Book form</h2>
+        <form name="bookForm" novalidate>
+          <div class="form-group">
+            <label for="title">Title:</label> <span ng-show="bookForm.title.$error.required" class="text-danger"><b>*</b> </span>
+            <input class="form-control" id="title" name="title" ng-model="book.title" placeholder="Book title" required>
+           
+          </div>
+         
+          <div class="form-group">
+            <label for="description">Comment:</label>
+            <textarea class="form-control" rows="5" id="description" name="description" ng-model="book.description"  placeholder="Book description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="level">Select list:</label>
+            <select class="form-control" id="level" name="level" ng-model="book.level" ng-options="level for level in levels">
+
+            </select>
+          </div>
+
+          <div class="form-group" style="display: none;">
+               <p ng-model="book">{{book._id}}</p>
+          </div>
+
+
+            <button type="button" class="btn btn-primary" ng-click="newBook()">New Book</button>
+            <button type="button" class="btn btn-success" ng-disabled="bookForm.$invalid" ng-click="saveBook(book)">Validate</button>
+            <button type="button" class="btn btn-danger" ng-disabled="bookForm.$invalid"  ng-click="deleteBook(book._id)">Delete</button>
+            
+        </form>
+      </div>
+
+
+        

@@ -1,0 +1,17 @@
+{
+	"name": "books",
+	"description": "books",
+	"version": "1.0.0",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js"
+	},
+	"author": "Seifeddine Selmi",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "1.0.2",
+		"express": "4.1.x",
+		"nedb": "0.10.5",
+		"nodemon": "^1.11.0"
+	}
+}
